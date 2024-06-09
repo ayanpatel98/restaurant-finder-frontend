@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Paprika Restaurant Finder
 
-First, run the development server:
+This project is a Next.js application designed to help users find restaurants catering to specific dietary preferences such as vegan, vegetarian, and gluten-free. The application uses the `app` directory for routing, creation of server side components and server-side rendering (SSR) to enhance SEO.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Setup and Running the Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To set up and run the project locally using npm, follow these steps:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Clone the Repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/ayanpatel98/restaurant-finder-frontend.git
+   cd restaurant-finder-frontend
+   ```
 
-## Learn More
+2. **Install Dependencies:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the Development Server:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. **Visit the Application:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Open your browser and navigate to `http://localhost:3000` to see the application running.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Project Structure, Dynamic Content Generation and Scalability
+
+- The 'data/restaurants-list.js' file is a dummy database which includes all the restaurants specifit to the city and state
+- The app folder contains all the designing css code in the globals.css file and business logic.
+- Dynamic pages can be generated to fetch and display the restaurants specific to the city and state using the dynamic routes which are created in the app folder '[city]/[state]/page.js', which also helps to support an infinite number of city/state combinations to make this application scalable.
+- Reusable components are created in the 'app/components' folder
+
+## SEO Optimizations (Bonus)
+
+To enhance SEO, the following optimizations are implemented:
+
+1. **Metadata:**
+   - Each dynamic page includes metadata such as title, description, and keywords to improve search engine visibility.
+
+2. **Server-Side Rendering (SSR):**
+   - By using SSR, the content is pre-rendered on the server, ensuring that search engines can crawl and index the pages effectively.
+   - This approach provides the latest data on each request, enhancing the user experience and improving SEO.
+
+## Conclusion
+
+This Next.js application is designed with scalability and SEO in mind, leveraging server-side rendering and dynamic routing to create a robust restaurant finder tool. By following the setup instructions, you can run the project locally and explore its features.
